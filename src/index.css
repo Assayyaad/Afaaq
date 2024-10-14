@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+body {
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background: 0;
+  padding: 0.5em 1.5em;
+  font-size: 1.125rem;
+  transition: 250ms;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+.flow-content--s > * + * {
+  margin-top: 0.5rem !important;
+}
+.flow-content--m > * + * {
+  margin-top: 1rem !important;
+}
+.flow-content--xm > * + * {
+  margin-top: 1.5rem !important;
+}
+.flow-content--l > * + * {
+  margin-top: 3rem !important;
+}
+.flow-content--xl > * + * {
+  margin-top: 3.5rem !important;
+}
+
+.hero {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("./assets/hero.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
