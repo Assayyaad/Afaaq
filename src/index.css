@@ -63,3 +63,7 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.btn--primary {
+  @apply bg-[#222] text-white rounded-md px-8 py-2 hover:bg-black duration-300;
+}

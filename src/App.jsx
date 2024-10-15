@@ -1,3 +1,4 @@
+import Contact from "./components/Contact";
 import CountDownSection from "./components/CountDownSection";
 import Hero from "./components/Hero";
 import Nav from "./components/Nav";
@@ -14,6 +15,7 @@ function App() {
       <Services />
       <Table />
       <Sponsors />
+      <Contact />
     </>
   );
 }
