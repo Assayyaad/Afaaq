@@ -1,6 +1,10 @@
 const ServiceCard = ({ img, desc }) => {
   return (
-    <div className="card shadow-md rounded-md p-6 flow-content--m max-w-[550px] group hover:bg-cyan-500 duration-300">
+    <div
+      className="card shadow-md rounded-md p-6 flow-content--m max-w-[550px] group hover:bg-cyan-500 duration-300"
+      data-aos="zoom-in"
+      data-aos-delay="500"
+    >
       <div className="img-wrapper">
         <img
           src={img}

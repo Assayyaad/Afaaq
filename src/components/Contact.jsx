@@ -5,8 +5,14 @@ import classNames from "classnames";
 import Lottie from "lottie-react";
 import { MdEmail } from "react-icons/md";
 import emailAnimation from "../../public/animations/emailAnimation.json";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import submitAnimation from "../../public/animations/submitAnimation.json";
 
 const Contact = () => {
+  const form = useRef();
+  const [isSubmitted, setSubmitted] = useState(false);
+
   const schema = z.object({
     name: z.string().min(3),
     email: z.string().email(),
@@ -19,33 +25,62 @@ const Contact = () => {
     formState: { errors, isValid },
   } = useForm({ resolver: zodResolver(schema) });
 
+  const sendEmail = () => {
+    emailjs
+      .sendForm("service_t5lvzdy", "template_cneh97l", form.current, {
+        publicKey: "WpAZ_YdF78OjIzJND",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          console.log(error);
+        }
+      );
+  };
+
   const submitData = (data, e) => {
     e.preventDefault();
+    setSubmitted(true);
+    sendEmail();
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
+
     console.log(data);
   };
 
   return (
-    <section className="py-12">
+    <section className="py-12" id="contact">
       <div className="container">
-        <header className="flow-content--m text-center mb-8">
+        <header
+          className="flow-content--m text-center mb-8"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
           <h2 className="text-2xl font-bold flex items-center gap-4 justify-center">
             تواصل معنا
             <MdEmail className="order-[-1]" size={30} />
           </h2>
           <p className="text-md">يرجى تعبئة الاستمارة التالية لتتواصلوا معنا</p>
         </header>
-        <div
-          className="wrapper grid md:grid-cols-2 items-center"
-          lang="en"
-          dir="ltr"
-        >
-          <form className="flow-content--m" onSubmit={handleSubmit(submitData)}>
+        <div className="wrapper grid md:grid-cols-2 items-center">
+          <form
+            className="flow-content--m"
+            onSubmit={handleSubmit(submitData)}
+            data-aos="fade-left"
+            data-aos-delay="500"
+            ref={form}
+          >
             <div className="">
               <label htmlFor="name" className="select-none mb-1 block">
-                Name
+                الاسم
               </label>
               <input
                 type="text"
+                name="name"
                 id="name"
                 className="w-full px-2 py-1 border border-zinc-700 rounded-md"
                 {...register("name")}
@@ -56,16 +91,17 @@ const Contact = () => {
                   "opacity-0": !errors.name,
                 })}
               >
-                Name must be at least 3 characters long!
+                يجب أن يتكون الاسم من 3 أحرف على الأقل!
               </span>
             </div>
             <div className="">
               <label htmlFor="email" className="select-none mb-1 block">
-                Email
+                البريد الإلكتروني
               </label>
               <input
                 type="email"
                 id="email"
+                name="email"
                 className="w-full px-2 py-1 border border-zinc-700 rounded-md"
                 {...register("email")}
               />
@@ -75,12 +111,12 @@ const Contact = () => {
                   "opacity-0": !errors.email,
                 })}
               >
-                Input a valid email!
+                أدخل بريدًا إلكترونيًا صحيحًا!
               </span>
             </div>
             <div className="">
               <label htmlFor="message" className="select-none mb-1 block">
-                Message
+                الرسالة
               </label>
               <textarea
                 name="message"
@@ -94,7 +130,7 @@ const Contact = () => {
                   "opacity-0": !errors.message,
                 })}
               >
-                Message must be at least 10 characters long!
+                يجب أن لا يقل طول الرسالة عن 10 أحرف!
               </span>
             </div>
             <button
@@ -102,13 +138,25 @@ const Contact = () => {
               className={
                 isValid
                   ? "px-8 py-2 rounded-md bg-[#222] hover:bg-[#000] duration-300 text-white"
-                  : "px-8 py-2 rounded-md bg-gray-600  text-white duration-300"
+                  : "px-8 py-2 rounded-md bg-gray-400  text-white duration-300"
               }
             >
-              Submit
+              أرسل
             </button>
+            {isSubmitted && (
+              <div className="flex items-center gap-4">
+                <span className="text-green-500 duration-300 text-md opacity-1">
+                  تم إرسال رسالتك بنجاح
+                </span>
+                <Lottie animationData={submitAnimation} loop={false} />
+              </div>
+            )}
           </form>
-          <div className="order-[-1] md:order-[0]">
+          <div
+            className="order-[-1] md:order-[0]"
+            data-aos="fade-right"
+            data-aos-delay="500"
+          >
             <Lottie animationData={emailAnimation} />
           </div>
         </div>

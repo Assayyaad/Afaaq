@@ -5,8 +5,15 @@ import Nav from "./components/Nav";
 import Services from "./components/Services";
 import Sponsors from "./components/Sponsors";
 import Table from "./components/Table";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import Footer from "./components/Footer";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <Nav />
@@ -16,6 +23,7 @@ function App() {
       <Table />
       <Sponsors />
       <Contact />
+      <Footer />
     </>
   );
 }

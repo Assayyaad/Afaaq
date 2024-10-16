@@ -1,7 +1,11 @@
 import { FaClock } from "react-icons/fa";
 const TableCard = () => {
   return (
-    <div className="table-card shadow-md rounded-md p-6 max-w-[560px] flow-content--s relative group hover:bg-cyan-500 hover:text-white duration-300">
+    <div
+      className="table-card shadow-md rounded-md p-6 max-w-[560px] flow-content--s relative group hover:bg-cyan-500 hover:text-white duration-300"
+      data-aos="zoom-in"
+      data-aos-delay="300"
+    >
       <div className="wrapper flex items-center gap-4">
         <span className="font-bold text-lg">الاسم :</span>
         <span>محمد</span>

@@ -3,12 +3,16 @@ import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   return (
-    <section className="py-12 ">
+    <section className="py-12 " id="services">
       <div className="container">
-        <header className="text-center mb-12">
+        <header
+          className="text-center mb-12"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
           <h2 className="title font-bold text-4xl">خدمات</h2>
         </header>
-        <div className="wrapper grid md:grid-cols-3 gap-4">
+        <div className="wrapper grid md:grid-cols-3 gap-4 justify-center md:justify-start">
           <ServiceCard
             img={serviceImg}
             desc={

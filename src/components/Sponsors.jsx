@@ -3,9 +3,13 @@ import ServiceCard from "./ServiceCard";
 
 const Sponsors = () => {
   return (
-    <section className="py-12">
+    <section className="py-12" id="sponsors">
       <div className="container">
-        <header className="flow-content--s mb-8">
+        <header
+          className="flow-content--s mb-8"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
           <h2 className="font-bold text-4xl text-center">شركاؤنا</h2>
           <p className="max-w-[450px] mx-auto">
             يتيح لك ايضا القدرة على إضافة علامات الترقيم، لهجات والحروف الخاصة
@@ -13,7 +17,7 @@ const Sponsors = () => {
             النتائج في خطوط مختلفة، وسوف تجد العديد من الميزات لتحديد
           </p>
         </header>
-        <div className="cards-wrapper grid md:grid-cols-3 items-center gap-4">
+        <div className="cards-wrapper grid md:grid-cols-3 items-center gap-4 justify-center md:justify-start">
           <ServiceCard
             img={serviceImg}
             desc={

@@ -67,3 +67,9 @@ body {
 .btn--primary {
   @apply bg-[#222] text-white rounded-md px-8 py-2 hover:bg-black duration-300;
 }
+
+@media screen and (max-width: 48em) {
+  html {
+    font-size: 85%;
+  }
+}
