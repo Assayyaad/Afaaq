@@ -1,63 +1,21 @@
-import serviceImg from "../assets";
-import ServiceCard from "./ServiceCard";
+import React from 'react'
+import ServiceCard from './ServiceCard.jsx'
+import { spon } from '../db.js'
 
-const Sponsors = () => {
+export default function Sponsors() {
   return (
     <section className="py-12" id="sponsors">
       <div className="container">
-        <header
-          className="flow-content--s mb-8"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        >
-          <h2 className="font-bold text-4xl text-center">شركاؤنا</h2>
-          <p className="max-w-[450px] mx-auto">
-            يتيح لك ايضا القدرة على إضافة علامات الترقيم، لهجات والحروف الخاصة
-            لتكون أقرب إلى اللغات الفرنسية أو غيرها. أيضا إذا كنت تريد أن ترى
-            النتائج في خطوط مختلفة، وسوف تجد العديد من الميزات لتحديد
-          </p>
+        <header className="flow-content--s mb-8" data-aos="zoom-in" data-aos-delay="300">
+          <h2 className="font-bold text-4xl text-center">{spon.title}</h2>
+          <p className="max-w-[450px] mx-auto">{spon.desc}</p>
         </header>
         <div className="cards-wrapper grid md:grid-cols-3 items-center gap-4 justify-center md:justify-start">
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
+          {spon.arr.map((item, i) => (
+            <ServiceCard key={i} img={item.img} />
+          ))}
         </div>
       </div>
     </section>
-  );
-};
-
-export default Sponsors;
+  )
+}

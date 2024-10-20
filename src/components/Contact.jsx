@@ -1,70 +1,62 @@
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import classNames from "classnames";
-import Lottie from "lottie-react";
-import { MdEmail } from "react-icons/md";
-import emailAnimation from "../../public/animations/emailAnimation.json";
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
-import submitAnimation from "../../public/animations/submitAnimation.json";
+import React, { useRef, useState } from 'react'
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import classNames from 'classnames'
+import Lottie from 'lottie-react'
+import emailAnimation from '../../public/animations/emailAnimation.json'
+import submitAnimation from '../../public/animations/submitAnimation.json'
+import { MdEmail } from 'react-icons/md'
+import { sendForm } from '@emailjs/browser'
+import { contact } from '../db.js'
 
-const Contact = () => {
-  const form = useRef();
-  const [isSubmitted, setSubmitted] = useState(false);
+function Contact() {
+  /** @type {React.MutableRefObject<HTMLFormElement>} */ // @ts-expect-error
+  const form = useRef(null)
+  const [isSubmitted, setSubmitted] = useState(false)
 
   const schema = z.object({
     name: z.string().min(3),
     email: z.string().email(),
-    message: z.string().min(10),
-  });
+    message: z.string().min(20)
+  })
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({ resolver: zodResolver(schema) });
+    formState: { errors, isValid }
+  } = useForm({ resolver: zodResolver(schema) })
 
-  const sendEmail = () => {
-    emailjs
-      .sendForm("service_t5lvzdy", "template_cneh97l", form.current, {
-        publicKey: "WpAZ_YdF78OjIzJND",
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-          console.log(error);
-        }
-      );
-  };
+  async function sendEmail() {
+    const res = await sendForm('service_t5lvzdy', 'template_cneh97l', form.current, {
+      publicKey: 'WpAZ_YdF78OjIzJND'
+    })
+    console.log(res.status)
+    console.log(res.text)
+  }
 
-  const submitData = (data, e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    sendEmail();
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+  /**
+   * @param {object} data
+   * @param {React.FormEvent<HTMLFormElement>} e
+   */
+  function submitData(data, e) {
+    e.preventDefault()
+    setSubmitted(true)
+    sendEmail()
+    setTimeout(() => setSubmitted(false), 3000)
 
-    console.log(data);
-  };
+    console.log(data)
+  }
 
   return (
     <section className="py-12" id="contact">
       <div className="container">
-        <header
-          className="flow-content--m text-center mb-8"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        >
+        <header className="flow-content--m text-center mb-8" data-aos="zoom-in" data-aos-delay="300">
           <h2 className="text-2xl font-bold flex items-center gap-4 justify-center">
-            تواصل معنا
+            {contact.title}
             <MdEmail className="order-[-1]" size={30} />
           </h2>
-          <p className="text-md">يرجى تعبئة الاستمارة التالية لتتواصلوا معنا</p>
+          <p className="text-md">{contact.desc}</p>
         </header>
         <div className="wrapper grid md:grid-cols-2 items-center">
           <form
@@ -76,93 +68,87 @@ const Contact = () => {
           >
             <div className="">
               <label htmlFor="name" className="select-none mb-1 block">
-                الاسم
+                {contact.form.name}
               </label>
               <input
                 type="text"
-                name="name"
+                // name="name"
                 id="name"
                 className="w-full px-2 py-1 border border-zinc-700 rounded-md"
-                {...register("name")}
+                {...register('name')}
               />
               <span
-                className={classNames("text-red-500 text-sm duration-300", {
-                  "opacity-1": errors.name,
-                  "opacity-0": !errors.name,
+                className={classNames('text-red-500 text-sm duration-300', {
+                  'opacity-1': errors.name,
+                  'opacity-0': !errors.name
                 })}
               >
-                يجب أن يتكون الاسم من 3 أحرف على الأقل!
+                {contact.form.msgs.shortName}
               </span>
             </div>
             <div className="">
               <label htmlFor="email" className="select-none mb-1 block">
-                البريد الإلكتروني
+                {contact.form.email}
               </label>
               <input
                 type="email"
                 id="email"
-                name="email"
+                // name="email"
                 className="w-full px-2 py-1 border border-zinc-700 rounded-md"
-                {...register("email")}
+                {...register('email')}
               />
               <span
-                className={classNames("text-red-500 text-sm duration-300", {
-                  "opacity-1": errors.email,
-                  "opacity-0": !errors.email,
+                className={classNames('text-red-500 text-sm duration-300', {
+                  'opacity-1': errors.email,
+                  'opacity-0': !errors.email
                 })}
               >
-                أدخل بريدًا إلكترونيًا صحيحًا!
+                {contact.form.msgs.invalidEmail}
               </span>
             </div>
             <div className="">
               <label htmlFor="message" className="select-none mb-1 block">
-                الرسالة
+                {contact.form.message}
               </label>
               <textarea
-                name="message"
+                // name="message"
                 id="message"
                 className="w-full px-2 py-1 border border-zinc-700 rounded-md min-h-[150px] vertical max-h-[200px]"
-                {...register("message")}
+                {...register('message')}
               ></textarea>
               <span
-                className={classNames("text-red-500 text-sm duration-300", {
-                  "opacity-1": errors.message,
-                  "opacity-0": !errors.message,
+                className={classNames('text-red-500 text-sm duration-300', {
+                  'opacity-1': errors.message,
+                  'opacity-0': !errors.message
                 })}
               >
-                يجب أن لا يقل طول الرسالة عن 10 أحرف!
+                {contact.form.msgs.shortMessage}
               </span>
             </div>
             <button
               type="submit"
               className={
                 isValid
-                  ? "px-8 py-2 rounded-md bg-[#222] hover:bg-[#000] duration-300 text-white"
-                  : "px-8 py-2 rounded-md bg-gray-400  text-white duration-300"
+                  ? 'px-8 py-2 rounded-md bg-[#222] hover:bg-[#000] duration-300 text-white'
+                  : 'px-8 py-2 rounded-md bg-gray-400  text-white duration-300'
               }
             >
-              أرسل
+              {contact.form.submit}
             </button>
             {isSubmitted && (
               <div className="flex items-center gap-4">
-                <span className="text-green-500 duration-300 text-md opacity-1">
-                  تم إرسال رسالتك بنجاح
-                </span>
+                <span className="text-green-500 duration-300 text-md opacity-1">{contact.form.msgs.success}</span>
                 <Lottie animationData={submitAnimation} loop={false} />
               </div>
             )}
           </form>
-          <div
-            className="order-[-1] md:order-[0]"
-            data-aos="fade-right"
-            data-aos-delay="500"
-          >
+          <div className="order-[-1] md:order-[0]" data-aos="fade-right" data-aos-delay="500">
             <Lottie animationData={emailAnimation} />
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

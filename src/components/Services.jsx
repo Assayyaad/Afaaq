@@ -1,58 +1,20 @@
-import serviceImg from "../assets";
-import ServiceCard from "./ServiceCard";
+import React from 'react'
+import ServiceCard from './ServiceCard.jsx'
+import { serv } from '../db.js'
 
-const Services = () => {
+export default function Services() {
   return (
     <section className="py-12 " id="services">
       <div className="container">
-        <header
-          className="text-center mb-12"
-          data-aos="zoom-in"
-          data-aos-delay="300"
-        >
-          <h2 className="title font-bold text-4xl">خدمات</h2>
+        <header className="text-center mb-12" data-aos="zoom-in" data-aos-delay="300">
+          <h2 className="title font-bold text-4xl">{serv.title}</h2>
         </header>
         <div className="wrapper grid md:grid-cols-3 gap-4 justify-center md:justify-start">
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
-          <ServiceCard
-            img={serviceImg}
-            desc={
-              "قد ألمانيا اقتصادية مما. فقد تم اوروبا ألمانيا المؤلّفة. بـ ويعزى انتباه تعد, بلا أي كنقطة الآخر. ما لكل نقطة ووصف الجنرال, و القوى الشتاء، الموسوعة لها. كردة والكساد ومحاولة حتى ٣٠, من حكومة غريمه الوزراء انه."
-            }
-          />
+          {serv.arr.map(({ img, title, desc }, i) => (
+            <ServiceCard key={i} img={img} title={title} desc={desc} />
+          ))}
         </div>
       </div>
     </section>
-  );
-};
-
-export default Services;
+  )
+}

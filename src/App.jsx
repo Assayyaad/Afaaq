@@ -1,19 +1,20 @@
-import Contact from "./components/Contact";
-import CountDownSection from "./components/CountDownSection";
-import Hero from "./components/Hero";
-import Nav from "./components/Nav";
-import Services from "./components/Services";
-import Sponsors from "./components/Sponsors";
-import Table from "./components/Table";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import Footer from "./components/Footer";
+import React, { useEffect } from 'react'
+import AOS from 'aos'
+import CountDownSection from './components/CountDownSection.jsx'
+import Services from './components/Services.jsx'
+import Sponsors from './components/Sponsors.jsx'
+import Contact from './components/Contact.jsx'
+import Footer from './components/Footer.jsx'
+import Table from './components/Table.jsx'
+import Hero from './components/Hero.jsx'
+import Nav from './components/Nav.jsx'
+import 'aos/dist/aos.css'
 
 function App() {
   useEffect(() => {
-    AOS.init();
-  }, []);
+    AOS.init()
+  }, [])
+
   return (
     <>
       <Nav />
@@ -25,7 +26,7 @@ function App() {
       <Contact />
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

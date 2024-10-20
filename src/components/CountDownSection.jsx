@@ -1,18 +1,21 @@
-import Countdown from "./CountDown";
+import React from 'react'
+import Countdown from './CountDown.jsx'
+import { countDown } from '../db.js'
 
-const CountDownSection = () => {
+export default function CountDownSection() {
+  // Set the target date to 26th October at 11 AM
+  const targetDate = new Date('2024-10-26T11:00:00')
+
   return (
     <section className="py-8 bg-gray-200">
       <div className="container flow-content--m">
         <header>
-          <h2 className="font-bold text-4xl text-center">الحدث سيبدأ خلال</h2>
+          <h2 className="font-bold text-4xl text-center">{countDown.title}</h2>
         </header>
         <div dir="ltr">
-          <Countdown />
+          <Countdown targetDate={targetDate} />
         </div>
       </div>
     </section>
-  );
-};
-
-export default CountDownSection;
+  )
+}
