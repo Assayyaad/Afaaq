@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "idered.npm",
+    "usernamehw.errorlens",
+    "gruntfuggly.todo-tree",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "yzhang.markdown-all-in-one",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense"
+  ]
+}
