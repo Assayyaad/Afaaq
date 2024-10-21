@@ -27,8 +27,7 @@ function TableCard0(item, i) {
   return (
     <div key={i} className="">
       <header className="flow-content--s mb-4" data-aos="zoom-in" data-aos-delay="200">
-        <h2 className="font-bold text-2xl">{`${table.start + i} أكتوبر`}</h2>
-        {/* <p className="font-bold text-2xl">تاريخ</p> */}
+        <h2 className="font-bold text-2xl">{`${table.start + i} أكتوبر - ${table.weekDays[i]}`}</h2>
       </header>
       <div className="wrapper grid md:grid-cols-2 gap-4">
         <TableCard order={1} data={first} />

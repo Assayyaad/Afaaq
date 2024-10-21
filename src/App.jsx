@@ -9,11 +9,14 @@ import Table from './components/Table.jsx'
 import Hero from './components/Hero.jsx'
 import Nav from './components/Nav.jsx'
 import 'aos/dist/aos.css'
+import { main } from './db.js'
 
-function App() {
+export default function App() {
   useEffect(() => {
     AOS.init()
   }, [])
+
+  document.title = main.name
 
   return (
     <>
@@ -28,5 +31,3 @@ function App() {
     </>
   )
 }
-
-export default App

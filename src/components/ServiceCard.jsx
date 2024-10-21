@@ -15,15 +15,12 @@ export default function ServiceCard({ img, title, desc }) {
       data-aos-delay="200"
     >
       <div className="img-wrapper">
-        <img src={img} alt={'صورة الخدمة'} className="w-[150px] h-[150px] rounded-full mx-auto" />
+        <img src={img} alt={'صورة الميزة'} className="w-[150px] h-[150px] rounded-full mx-auto" />
       </div>
-      {/* TODO: center the title */}
       {title && (
-        <h2>
-          <b>
-          <p className="title max-w-[300px]">{title}</p>
-          </b>
-        </h2>
+        <b>
+          <p className="title max-w-[300px] text-center">{title}</p>
+        </b>
       )}
       {desc && <p className="description max-w-[450px]">{desc}</p>}
     </div>
