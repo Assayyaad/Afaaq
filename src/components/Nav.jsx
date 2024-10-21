@@ -35,8 +35,8 @@ export default function Nav() {
           <ul
             className={
               nav
-                ? 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-0 duration-300'
-                : 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-[-100%] duration-300'
+                ? 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-0'
+                : 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-[-100%]'
             }
           >
             <li>
