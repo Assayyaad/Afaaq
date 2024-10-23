@@ -15,6 +15,13 @@ export default function CountDownSection() {
         <div dir="ltr">
           <Countdown targetDate={targetDate} />
         </div>
+        <div className="text-center">
+          <a href={countDown.maps} target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">
+            {countDown.location.map((line, i) => (
+              <p key={i}>{line}</p>
+            ))}
+          </a>
+        </div>
       </div>
     </section>
   )
