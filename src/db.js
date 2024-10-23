@@ -6,6 +6,8 @@ import PEOPLE from './assets/services/eva--people-fill.png'
 import ACS from './assets/sponsors/acs.jpg'
 // @ts-expect-error
 import CMC from './assets/sponsors/cmc.jpg'
+// @ts-expect-error
+import QMA from './assets/sponsors/qiyam.png'
 
 export const main = {
   name: 'آفاق العلم'
@@ -111,13 +113,16 @@ export const table = {
 
 export const spon = {
   title: 'شركاؤنا',
-  desc: '.',
+  desc: 'جزى الله شركائنا خيراً على مساهمتهم في إنجاح هذا الحدث',
   arr: [
     {
       img: ACS
     },
     {
       img: CMC
+    },
+    {
+      img: QMA
     }
   ]
 }

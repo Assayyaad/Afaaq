@@ -8,7 +8,7 @@ export default function Sponsors() {
       <div className="container">
         <header className="flow-content--s mb-8" data-aos="zoom-in" data-aos-delay="100">
           <h2 className="font-bold text-4xl text-center">{spon.title}</h2>
-          <p className="max-w-[450px] mx-auto">{spon.desc}</p>
+          <p className="max-w-[500px] mx-auto">{spon.desc}</p>
         </header>
         <div className="cards-wrapper grid md:grid-cols-3 items-center gap-4 justify-center md:justify-start">
           {spon.arr.map((item, i) => (
