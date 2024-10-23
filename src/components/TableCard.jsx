@@ -14,6 +14,11 @@ export default function TableCard({ order, data }) {
         <div className="badge flex items-center gap-4 justify-between rounded-md shadow-md bg-black text-white px-4 py-1">
           <span>{data.time || order === 1 ? '11:30 - 1:00 ظهراً' : '1:30 - 3:00 ظهراً'}</span>
         </div>
+        {data.femaleOnly && (
+          <div className="badge flex items-center gap-4 justify-between rounded-md shadow-md bg-[#ff3333] text-white px-4 py-1">
+            <span>للإناث فقط</span>
+          </div>
+        )}
       </div>
       <div className="wrapper flex items-center gap-4">
         <span className="font-bold text-lg">الاسم:</span>
@@ -35,5 +40,6 @@ export default function TableCard({ order, data }) {
  * @prop {number} data.title
  * @prop {number} data.name
  * @prop {number} data.desc
+ * @prop {number} [data.femaleOnly]
  * @prop {number} [data.time]
  */
