@@ -6,7 +6,7 @@ import ACS from './assets/sponsors/acs.jpg'
 import CMC from './assets/sponsors/cmc.jpg'
 
 export const main = {
-  name: 'آفاق جديدة'
+  name: 'آفاق العلم'
 }
 
 export const nav = {
