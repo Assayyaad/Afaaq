@@ -1,21 +1,15 @@
+/** @import { IconType } from 'react-icons/lib' */
 import React from 'react'
 
 /**
- * @param {object} props
- * @param {any} props.img
- * @param {string} [props.title]
- * @param {string} [props.desc]
+ * @param {ServiceCardProps} props
  * @returns
  */
 export default function ServiceCard({ img, title, desc }) {
   return (
-    <div
-      className="card shadow-md rounded-md p-6 flow-content--m max-w-[550px] group"
-      data-aos="zoom-in"
-      data-aos-delay="200"
-    >
+    <div className="card shadow-md p-6 flow-content--m max-w-[550px] group" data-aos="zoom-in" data-aos-delay="200">
       <div className="img-wrapper">
-        <img src={img} alt={'صورة الميزة'} className="w-[150px] h-[150px] rounded-full mx-auto" />
+        <img src={img} alt={'صورة الميزة'} className="w-[150px] h-[150px] mx-auto" />
       </div>
       {title && (
         <b>
@@ -26,3 +20,10 @@ export default function ServiceCard({ img, title, desc }) {
     </div>
   )
 }
+
+/**
+ * @typedef {object} ServiceCardProps
+ * @prop {any} img
+ * @prop {string} [title]
+ * @prop {string} [desc]
+ */

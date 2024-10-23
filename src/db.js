@@ -129,7 +129,7 @@ export const spon = {
 
 export const contact = {
   title: 'تواصل معنا',
-  desc: 'تأكدوا من البريد الإلكتروني المُدخل حتى نتمكن من الرد عليكم',
+  desc: 'لا تتردد في التواصل معنا إذا كان لديك أي استفسار أو تحتاج إلى مساعدة',
   whatsapp: 'https://wa.me/+966536700116',
   telegram: 'https://t.me/assayyaad'
 }
