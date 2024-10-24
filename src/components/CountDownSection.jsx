@@ -5,8 +5,7 @@ import Register from './Register.jsx'
 import { countDown } from '../db.js'
 
 export default function CountDownSection() {
-  // Set the target date to 26th October at 11 AM
-  const targetDate = new Date('2024-10-26T11:00:00')
+  const targetDate = new Date(countDown.date)
 
   return (
     <section className="py-8 bg-gray-200">
