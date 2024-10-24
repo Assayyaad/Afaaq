@@ -17,6 +17,13 @@ export default function Hero() {
               {text}
             </p>
           ))}
+          <div className="text-center">
+            <a href={desc.maps} target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">
+              {desc.location.map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </a>
+          </div>
         </header>
       </div>
     </section>
