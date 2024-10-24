@@ -1,7 +1,9 @@
 // @ts-expect-error
-import FOOD from './assets/services/fluent--food-toast-16-filled.png'
-// @ts-expect-error
 import PEOPLE from './assets/services/eva--people-fill.png'
+// @ts-expect-error
+import WATER from './assets/services/ion--water.png'
+// @ts-expect-error
+import FOOD from './assets/services/fluent--food-toast-16-filled.png'
 // @ts-expect-error
 import ACS from './assets/sponsors/acs.jpg'
 // @ts-expect-error
@@ -41,14 +43,19 @@ export const serv = {
   title: 'مزايا',
   arr: [
     {
-      img: FOOD,
-      title: 'مأكولات عربية',
-      desc: 'سيوجد مأكولات عربية متنوعة وشهية مقدمة من عوائل عربية'
-    },
-    {
       img: PEOPLE,
       title: 'فرصة تعارف',
-      desc: 'نقدم فرصة للتعارف بين الطلاب والمحاضرين والمشاركين'
+      desc: 'فرصة للتعرف على الطلاب والمحاضرين والمنظمين'
+    },
+    {
+      img: WATER,
+      title: 'مياه مجانية',
+      desc: 'ستتوفر مياه مجانية للمشاركين طوال فترة الحدث'
+    },
+    {
+      img: FOOD,
+      title: 'مأكولات عربية',
+      desc: 'توفير قائمة مأكولات عربية خفيفة للحضور'
     }
   ]
 }
