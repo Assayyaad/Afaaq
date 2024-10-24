@@ -135,7 +135,7 @@ export const spon = {
     },
     {
       img: CMC,
-      url: ''
+      url: 'https://instagram.com/curious_minds_technology'
     },
     {
       img: QMA,
