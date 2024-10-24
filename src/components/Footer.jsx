@@ -28,14 +28,20 @@ export default function Footer() {
           </ul>
         </div>
         <div className="container flex md:flex-row flex-col">
-          <a href={footer.organizer.url} className="text-l mt-4">
-            {footer.organizer.intro} {footer.organizer.name}
-          </a>
+          <p className="text-l mt-4">
+            {footer.organizer.intro}{' '}
+            <a href={footer.dev.url} className="text-l mt-4 text-blue-500 hover:underline">
+              {footer.organizer.name}
+            </a>
+          </p>
         </div>
         <div className="container flex md:flex-row flex-col">
-          <a href={footer.dev.url} className="text-l mt-1">
-            {footer.dev.intro} {footer.dev.name}
-          </a>
+          <p className="text-l mt-1">
+            {footer.dev.intro}{' '}
+            <a href={footer.dev.url} className="text-l mt-1 text-blue-500 hover:underline">
+              {footer.dev.name}
+            </a>
+          </p>
         </div>
       </div>
     </footer>
