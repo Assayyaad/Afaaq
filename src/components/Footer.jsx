@@ -30,7 +30,7 @@ export default function Footer() {
         <div className="container flex md:flex-row flex-col">
           <p className="text-l mt-4">
             {footer.organizer.intro}{' '}
-            <a href={footer.dev.url} className="text-l mt-4 text-blue-500 hover:underline">
+            <a href={footer.organizer.url} className="text-l mt-4 text-blue-500 hover:underline">
               {footer.organizer.name}
             </a>
           </p>
