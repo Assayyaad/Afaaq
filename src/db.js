@@ -1,6 +1,8 @@
 // @ts-expect-error
 import PEOPLE from './assets/services/eva--people-fill.png'
 // @ts-expect-error
+import QUESTION from './assets/services/fluent-emoji-flat--white-question-mark.png'
+// @ts-expect-error
 import WATER from './assets/services/ion--water.png'
 // @ts-expect-error
 import FOOD from './assets/services/fluent--food-toast-16-filled.png'
@@ -45,18 +47,23 @@ export const serv = {
   arr: [
     {
       img: PEOPLE,
-      title: 'فرصة تعارف',
+      title: 'شبكة علاقات',
       desc: 'فرصة للتعرف على الطلاب والمحاضرين والمنظمين'
+    },
+    {
+      img: QUESTION,
+      title: 'معارف جديدة',
+      desc: 'استكشاف مواضيع جديدة ومجالات مختلفة'
     },
     {
       img: WATER,
       title: 'مياه مجانية',
-      desc: 'ستتوفر مياه مجانية للمشاركين طوال فترة الحدث'
+      desc: 'مياه مجانية مقدمة من المنظمين كل يوم للحضور'
     },
     {
       img: FOOD,
       title: 'مأكولات عربية',
-      desc: 'توفير قائمة مأكولات عربية خفيفة للحضور'
+      desc: 'توفير قائمة مأكولات عربية منزلية خفيفة للطلب'
     }
   ]
 }
