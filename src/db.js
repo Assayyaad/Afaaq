@@ -36,6 +36,11 @@ export const desc = {
   maps: 'https://maps.app.goo.gl/W6cdnsGP9dYPGBQC9'
 }
 
+export const register = {
+  title: 'سجل الآن',
+  url: 'https://docs.google.com/forms/d/e/1FAIpQLSfaBlI64Rbq3N6Smbr3CwC0NFUw-9Wr0YwI8Zf-CWWCPas2-w/viewform'
+}
+
 export const countDown = {
   title: 'سيبدأ الحدث خلال',
   date: '2022-10-26T19:30:00.000Z',
@@ -164,4 +169,4 @@ export const footer = {
   }
 }
 
-export default { main, nav, desc, countDown, serv, table, spon, contact, footer }
+export default { main, nav, desc, register, countDown, serv, table, spon, contact, footer }

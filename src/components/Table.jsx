@@ -1,5 +1,6 @@
 import React from 'react'
 import TableCard from './TableCard.jsx'
+import Register from './Register.jsx'
 import { table } from '../db.js'
 
 export default function Table() {
@@ -9,9 +10,11 @@ export default function Table() {
         <header className="mb-12 flow-content--s" data-aos="zoom-in" data-aos-delay="100">
           <h2 className="text-4xl font-bold text-center">{table.title}</h2>
         </header>
+        <Register />
         <div className="cards-wrapper py-6 ">
           <div className="wrapper flow-content--m">{table.arr.map((item, i) => TableCard0(item, i))}</div>
         </div>
+        <Register />
       </div>
     </section>
   )

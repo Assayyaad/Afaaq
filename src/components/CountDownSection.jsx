@@ -1,5 +1,6 @@
 import React from 'react'
 import Countdown from './CountDown.jsx'
+import Register from './Register.jsx'
 import { countDown } from '../db.js'
 
 export default function CountDownSection() {
@@ -15,6 +16,7 @@ export default function CountDownSection() {
         <div dir="ltr">
           <Countdown targetDate={targetDate} />
         </div>
+        <Register />
       </div>
     </section>
   )
