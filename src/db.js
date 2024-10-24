@@ -148,4 +148,17 @@ export const contact = {
   telegram: 'https://t.me/assayyaad'
 }
 
-export default { main, nav, desc, countDown, serv, table, spon, contact }
+export const footer = {
+  organizer: {
+    intro: 'الحدث بتنظيم',
+    name: 'الصياد',
+    url: 'https://links.assayyaad.pro'
+  },
+  dev: {
+    intro: 'الموقع بتطوير',
+    name: 'عبدالسلام',
+    url: 'https://github.com/akashi-miano'
+  }
+}
+
+export default { main, nav, desc, countDown, serv, table, spon, contact, footer }

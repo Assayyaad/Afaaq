@@ -1,5 +1,5 @@
 import React from 'react'
-import { main, nav } from '../db.js'
+import { main, nav, footer } from '../db.js'
 
 export default function Footer() {
   return (
@@ -26,6 +26,16 @@ export default function Footer() {
               <a href="#contact">{nav.contact}</a>
             </li>
           </ul>
+        </div>
+        <div className="container flex md:flex-row flex-col">
+          <a href={footer.organizer.url} className="text-l mt-4">
+            {footer.organizer.intro} {footer.organizer.name}
+          </a>
+        </div>
+        <div className="container flex md:flex-row flex-col">
+          <a href={footer.dev.url} className="text-l mt-1">
+            {footer.dev.intro} {footer.dev.name}
+          </a>
         </div>
       </div>
     </footer>
