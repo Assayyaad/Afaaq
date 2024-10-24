@@ -26,4 +26,5 @@ export default function ServiceCard({ img, title, desc }) {
  * @prop {any} img
  * @prop {string} [title]
  * @prop {string} [desc]
+ * @prop {string} [url]
  */
