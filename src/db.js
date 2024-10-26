@@ -14,7 +14,7 @@ import CMC from './assets/sponsors/cmc.jpg'
 import QMA from './assets/sponsors/qiyam.png'
 
 export const main = {
-  name: 'مبادرة آفاق المعرفة'
+  name: 'آفاق المعرفة'
 }
 
 export const nav = {
