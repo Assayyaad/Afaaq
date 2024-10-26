@@ -7,7 +7,7 @@ export default function Register() {
       <div className="text-center">
         <a
           href={register.url}
-          className="px-12 py-3 rounded-md bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 hover:from-purple-500 hover:to-red-600 duration-300 text-white transform hover:scale-105"
+          className="hvr-sweep-to-left btn rounded-md !bg-[#222] text-white"
           target="_blank"
           rel="noreferrer"
         >

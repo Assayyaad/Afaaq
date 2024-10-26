@@ -8,7 +8,7 @@ export default function CountDownSection() {
   const targetDate = new Date(countDown.date)
 
   return (
-    <section className="py-8 bg-gray-200">
+    <section className="py-8">
       <div className="container flow-content--m">
         <header>
           <h2 className="font-bold text-4xl text-center">{countDown.title}</h2>
@@ -19,7 +19,7 @@ export default function CountDownSection() {
         <div className="flex flex-col items-center text-center justify-center">
           <a
             href={countDown.maps}
-            className="px-2 py-2 rounded-lg shadow-md bg-[#fff] hover:bg-[#ccc] duration-300 text-black"
+            className="p-4 rounded-lg shadow-md bg-[#fff] hover:bg-[#222] hover:text-white duration-300 text-black"
             target="_blank"
             rel="noreferrer"
           >

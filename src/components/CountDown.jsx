@@ -16,7 +16,7 @@ export default function Countdown({ targetDate }) {
       key={interval}
       className="w-24 h-24 flex flex-col items-center justify-center m-2 bg-white rounded-lg shadow-md"
     >
-      <div className="text-4xl font-bold text-gray-800">{value}</div>
+      <div className="text-4xl font-bold text-gray-800 py-2">{value}</div>
       <div className="text-sm text-gray-500">{interval}</div>
     </div>
   ))

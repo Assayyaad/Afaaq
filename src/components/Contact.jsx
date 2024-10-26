@@ -10,14 +10,29 @@ export default function Contact() {
           <h2 className="text-2xl font-bold flex items-center gap-4 justify-center">{contact.title}</h2>
           <p className="text-md">{contact.desc}</p>
         </header>
-        <div className="flex justify-center items-center gap-4">
-          <a href={contact.telegram} target="_blank" rel="noopener noreferrer">
-            <BsTelegram size={120} />
-          </a>
-          <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer">
-            <BsWhatsapp size={120} />
-          </a>
-        </div>
+        <ul className="flex justify-center items-center gap-4 flex-col md:flex-row">
+          <li data-aos="zoom-in" data-aos-delay="300">
+            <a
+              href={contact.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-cyan-500 duration-300"
+            >
+              <BsTelegram size={120} />
+            </a>
+          </li>
+
+          <li data-aos="zoom-in" data-aos-delay="500">
+            <a
+              href={contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-green-500 duration-300"
+            >
+              <BsWhatsapp size={120} />
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   )

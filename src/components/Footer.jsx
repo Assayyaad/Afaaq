@@ -6,48 +6,77 @@ export default function Footer() {
     <footer className="bg-[#222] text-white py-12">
       <div className="container">
         <div className="container flex md:flex-row flex-col items-center justify-between">
-          <a href="#" className="text-2xl font-bold mb-8 md:mb-0">
+          <a href="#" className="text-2xl font-bold mb-8 md:mb-0" data-aos="fade-left" data-aos-delay="200">
             {main.name}
           </a>
-          <ul className="flex md:flex-row flex-col items-center gap-4 justify-center">
+          <ul
+            className="flex md:flex-row flex-col items-center gap-4 justify-center"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
             <li>
-              <a href="#">{nav.home}</a>
+              <a href="#" className="duration-300 hover:text-cyan-400">
+                {nav.home}
+              </a>
             </li>
             <li>
-              <a href="#services">{nav.services}</a>
+              <a href="#services" className="duration-300 hover:text-cyan-400">
+                {nav.services}
+              </a>
             </li>
             <li>
-              <a href="#table">{nav.table}</a>
+              <a href="#table" className="duration-300 hover:text-cyan-400">
+                {nav.table}
+              </a>
             </li>
             <li>
-              <a href="#sponsors">{nav.sponsors}</a>
+              <a href="#sponsors" className="duration-300 hover:text-cyan-400">
+                {nav.sponsors}
+              </a>
             </li>
             <li>
-              <a href="#contact">{nav.contact}</a>
+              <a href="#contact" className="duration-300 hover:text-cyan-400">
+                {nav.contact}
+              </a>
             </li>
           </ul>
         </div>
-        <div className="container flex md:flex-row flex-col">
-          <p className="text-l mt-4">
-            {footer.organizer.intro}{' '}
-            <a href={footer.organizer.url} className="text-l mt-4 text-blue-500 hover:underline">
+        <ul
+          className="mt-4 flex flex-col items-center md:items-start gap-4 md:gap-2"
+          data-aos="fade-left"
+          data-aos-delay="200"
+        >
+          <li className="flex items-center gap-2">
+            <span>{footer.organizer.intro}: </span>
+            <a
+              href={footer.organizer.url}
+              className="text-lg text-cyan-400 duration-300 hover:text-yellow-400"
+              target="_blank"
+            >
               {footer.organizer.name}
             </a>
-          </p>
-        </div>
-        <div className="container flex md:flex-row flex-col">
-          <p className="text-l mt-1">
-            {footer.dev.intro}{' '}
-            <a href={footer.dev.url} className="text-l mt-1 text-blue-500 hover:underline">
+          </li>
+          <li className="flex items-center gap-2">
+            <span>{footer.dev.intro}: </span>
+            <a
+              href={footer.dev.url}
+              className="text-lg text-cyan-400 duration-300 hover:text-yellow-400"
+              target="_blank"
+            >
               {footer.dev.name}
-            </a>{' '}
-            {' • '}
-            {footer.source.intro}{' '}
-            <a href={footer.source.url} className="text-l mt-1 text-blue-500 hover:underline">
+            </a>
+          </li>
+          <li className="flex items-center gap-2">
+            <span>{footer.source.intro}: </span>
+            <a
+              href={footer.source.url}
+              className="text-lg text-cyan-400 duration-300 hover:text-yellow-400"
+              target="_blank"
+            >
               {footer.source.name}
             </a>
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </footer>
   )

@@ -19,7 +19,7 @@ export const main = {
 
 export const nav = {
   home: 'الرئيسية',
-  services: 'الخدمات',
+  services: 'مزايا',
   table: 'جدول الأسبوع',
   sponsors: 'شركاؤنا',
   contact: 'تواصل معنا'
@@ -151,7 +151,8 @@ export const spon = {
     },
     {
       img: CMC,
-      url: 'https://instagram.com/curious_minds_technology'
+      url: 'https://instagram.com/curious_minds_technology',
+      height: true
     },
     {
       img: QMA,
@@ -176,7 +177,7 @@ export const footer = {
   dev: {
     intro: 'الموقع بتطوير',
     name: 'عبدالسلام',
-    url: 'https://github.com/akashi-miano'
+    url: 'https://akashi-portfolio.netlify.app/'
   },
   source: {
     intro: 'تجدون المصدر',

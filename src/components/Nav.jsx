@@ -12,19 +12,29 @@ export default function Nav() {
       <div className="container flex items-center justify-between" dir="ltr">
         <ul className="md:flex items-start gap-4 f hidden">
           <li>
-            <a href="#contact">{dbNav.contact}</a>
+            <a href="#contact" className="duration-300 hover:text-cyan-400">
+              {dbNav.contact}
+            </a>
           </li>
           <li>
-            <a href="#sponsors">{dbNav.sponsors}</a>
+            <a href="#sponsors" className="duration-300 hover:text-cyan-400">
+              {dbNav.sponsors}
+            </a>
           </li>
           <li>
-            <a href="#table">{dbNav.table}</a>
+            <a href="#table" className="duration-300 hover:text-cyan-400">
+              {dbNav.table}
+            </a>
           </li>
           <li>
-            <a href="#services">{dbNav.services}</a>
+            <a href="#services" className="duration-300 hover:text-cyan-400">
+              {dbNav.services}
+            </a>
           </li>
           <li>
-            <a href="#">{dbNav.home}</a>
+            <a href="#" className="duration-300 hover:text-cyan-400">
+              {dbNav.home}
+            </a>
           </li>
         </ul>
 
@@ -35,32 +45,32 @@ export default function Nav() {
           <ul
             className={
               nav
-                ? 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-0'
-                : 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-[-100%]'
+                ? 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-0 duration-300'
+                : 'fixed top-0 left-0 bottom-0 w-[80%] z-[999] text-white flex flex-col items-center justify-center bg-black gap-8 translate-x-[-100%] duration-300'
             }
           >
             <li>
-              <a href="#" className="text-4xl" onClick={() => setNav(!nav)}>
+              <a href="#" className="text-4xl py-2" onClick={() => setNav(!nav)}>
                 {dbNav.home}
               </a>
             </li>
             <li>
-              <a href="#services" className="text-4xl" onClick={() => setNav(!nav)}>
+              <a href="#services" className="text-4xl py-2" onClick={() => setNav(!nav)}>
                 {dbNav.services}
               </a>
             </li>
             <li>
-              <a href="#table" className="text-4xl" onClick={() => setNav(!nav)}>
+              <a href="#table" className="text-4xl py-2" onClick={() => setNav(!nav)}>
                 {dbNav.table}
               </a>
             </li>
             <li>
-              <a href="#sponsors" className="text-4xl" onClick={() => setNav(!nav)}>
+              <a href="#sponsors" className="text-4xl py-2" onClick={() => setNav(!nav)}>
                 {dbNav.sponsors}
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-4xl" onClick={() => setNav(!nav)}>
+              <a href="#contact" className="text-4xl py-2" onClick={() => setNav(!nav)}>
                 {dbNav.contact}
               </a>
             </li>
