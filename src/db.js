@@ -166,6 +166,11 @@ export const footer = {
     intro: 'الموقع بتطوير',
     name: 'عبدالسلام',
     url: 'https://github.com/akashi-miano'
+  },
+  source: {
+    intro: 'تجدون المصدر',
+    name: 'هنا',
+    url: 'https://github.com/Assayyaad/event'
   }
 }
 

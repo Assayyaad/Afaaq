@@ -40,6 +40,11 @@ export default function Footer() {
             {footer.dev.intro}{' '}
             <a href={footer.dev.url} className="text-l mt-1 text-blue-500 hover:underline">
               {footer.dev.name}
+            </a>{' '}
+            {' • '}
+            {footer.source.intro}{' '}
+            <a href={footer.source.url} className="text-l mt-1 text-blue-500 hover:underline">
+              {footer.source.name}
             </a>
           </p>
         </div>
