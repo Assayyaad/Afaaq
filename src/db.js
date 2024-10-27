@@ -7,8 +7,6 @@ import WATER from './assets/services/ion--water.png'
 // @ts-expect-error
 import FOOD from './assets/services/fluent--food-toast-16-filled.png'
 // @ts-expect-error
-import ACS from './assets/sponsors/acs.jpg'
-// @ts-expect-error
 import CMC from './assets/sponsors/cmc.jpg'
 // @ts-expect-error
 import QMA from './assets/sponsors/qiyam.png'
@@ -145,10 +143,6 @@ export const spon = {
   title: 'شركاؤنا',
   desc: 'جزى الله شركائنا خيراً على مساهمتهم في إنجاح هذا الحدث',
   arr: [
-    {
-      img: ACS,
-      url: 'https://linktr.ee/acsmmu'
-    },
     {
       img: CMC,
       url: 'https://instagram.com/curious_minds_technology',
