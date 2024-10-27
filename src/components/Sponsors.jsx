@@ -10,7 +10,7 @@ export default function Sponsors() {
           <h2 className="font-bold text-4xl text-center">{spon.title}</h2>
           <p className="max-w-[500px] mx-auto text-center">{spon.desc}</p>
         </header>
-        <ul className="cards-wrapper grid md:grid-cols-3 items-center gap-4 justify-center md:justify-start py-4">
+        <ul className="cards-wrapper flex items-center gap-4 justify-center  py-4">
           {spon.arr.map((item, i) => (
             <li className="w-fit overflow-hidden py-2" data-aos="zoom-in" data-aos-delay="300">
               <a
