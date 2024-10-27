@@ -27,7 +27,7 @@ export default function Countdown({ targetDate }) {
         timeComponents
       ) : (
         <div className="animate-bounce">
-          <span className="text-4xl text-red-600 font-bold">{countDown.msg}</span>
+          <span className="text-4xl text-red-600 font-bold py-2 block">{countDown.msg}</span>
         </div>
       )}
     </div>
