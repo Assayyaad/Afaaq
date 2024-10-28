@@ -37,13 +37,39 @@ export const register = {
   url: 'https://docs.google.com/forms/d/e/1FAIpQLSfaBlI64Rbq3N6Smbr3CwC0NFUw-9Wr0YwI8Zf-CWWCPas2-w/viewform'
 }
 
+function getNextEventDate() {
+  const today = new Date()
+  const eventTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 11, 30) // Event time at 11:30 AM
+  const fourPM = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 16, 0) // 4:00 PM today
+
+  // If current time is after 4 PM, set the event time to 11:30 AM the next day
+  if (today > fourPM) {
+    eventTime.setDate(eventTime.getDate() + 1) // Move to the next day
+  }
+
+  return eventTime.toISOString() // Return ISO string format for date property
+}
+
 export const countDown = {
   title: 'سيبدأ الحدث خلال',
-  date: '2024-10-29T11:30:00',
+  date: getNextEventDate(), // Set dynamically based on time,
   msg: 'بدأ الحدث',
   location: ['قاعة 1026', 'كلية FOE الطابق الأول', 'جامعة MMU Cyberjaya'],
   maps: 'https://maps.app.goo.gl/W6cdnsGP9dYPGBQC9'
 }
+
+function updateCountdownDate() {
+  countDown.date = getNextEventDate()
+}
+
+// Check every hour if the date needs to be updated
+setInterval(() => {
+  const now = new Date()
+  // If it's 4 PM or later, update the date
+  if (now.getHours() === 16 && now.getMinutes() === 0) {
+    updateCountdownDate()
+  }
+}, 3600000) // Run every hour (3600000 ms)
 
 export const serv = {
   title: 'مزايا',
