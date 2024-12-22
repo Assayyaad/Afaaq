@@ -41,9 +41,9 @@ export const register = {
 
 export const countDown = {
   title: 'سيبدأ الحدث خلال',
-  date: new Date(),
-  msg: 'انتهى الحدث',
-  location: ['قاعة 1026', 'كلية FOE الطابق الأول', 'جامعة MMU Cyberjaya'],
+  date: '2024-10-26T19:30:00.000Z',
+  over: 'انتهى الحدث',
+  location: 'جامعة MMU كلية الهندسة (FOE) الطابق الأرضي (G) قاعة 1026',
   maps: 'https://maps.app.goo.gl/W6cdnsGP9dYPGBQC9'
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import AOS from 'aos'
-import CountDownSection from './components/CountDownSection.jsx'
+import Countdown from './components/Countdown.jsx'
 import Services from './components/Services.jsx'
 import Sponsors from './components/Sponsors.jsx'
 import Contact from './components/Contact.jsx'
@@ -22,7 +22,7 @@ export default function App() {
     <>
       <Nav />
       <Hero />
-      <CountDownSection />
+      <Countdown />
       <Services />
       <Table />
       <Sponsors />
