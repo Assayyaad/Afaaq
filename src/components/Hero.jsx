@@ -12,6 +12,7 @@ export default function Hero() {
           <h2 className="title font-bold text-2xl text-center" data-aos="fade-right" data-aos-delay="100">
             {desc.bio}
           </h2>
+          <br />
           {desc.text.map((text, i) => (
             <p key={i} className="max-w-[600px] mx-auto" data-aos="fade-left" data-aos-delay={200 + i * 100}>
               {text}

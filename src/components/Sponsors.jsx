@@ -1,5 +1,4 @@
 import React from 'react'
-import ServiceCard from './ServiceCard.jsx'
 import { spon } from '../db.js'
 
 export default function Sponsors() {

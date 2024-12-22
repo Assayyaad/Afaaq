@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaExternalLinkAlt, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 import Register from './Register.jsx'
 import { countDown } from '../db.js'
 

@@ -25,6 +25,11 @@ export default function Certificates({ id, images }) {
     }
   }, [id, images])
 
+  /**
+   * @param {string} src
+   * @param {number} index
+   * @returns {Promise<any>}
+   */
   async function drawQRCodeOnImage(src, index) {
     const canvas = canvasRefs.current[index]
     if (!canvas) return
@@ -101,7 +106,7 @@ export default function Certificates({ id, images }) {
                 <div key={num} className="block">
                   <canvas ref={(el) => (canvasRefs.current[i] = el)} style={{ display: 'none' }} />
                   <a href={`/cert/${newId}`}>
-                    <img src={src} className="max-w-full max-h-full cursor-pointer" />
+                    <img src={src} className="max-w-full max-h-full cursor-pointer" alt={`الشهادة ${num}`} />
                   </a>
                 </div>
               )

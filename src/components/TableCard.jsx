@@ -21,7 +21,7 @@ export default function TableCard({ order, data }) {
         )}
       </div>
       <div className="wrapper flex items-center gap-4">
-        <span className="font-bold text-lg">الاسم:</span>
+        <span className="font-bold text-lg">المحاضر:</span>
         <span>{data.name}</span>
       </div>
       <div className="wrapper flex items-center gap-4">
