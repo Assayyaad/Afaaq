@@ -176,7 +176,7 @@ export const footer = {
   source: {
     intro: 'تجدون المصدر',
     name: 'هنا',
-    url: 'https://github.com/Assayyaad/event'
+    url: 'https://github.com/Assayyaad/Afaaq'
   }
 }
 
