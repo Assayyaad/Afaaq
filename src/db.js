@@ -1,11 +1,13 @@
 // @ts-expect-error
+import CERTIFICATE from './assets/services/tdesign--certificate.png'
+// @ts-expect-error
 import PEOPLE from './assets/services/eva--people-fill.png'
 // @ts-expect-error
-import QUESTION from './assets/services/fluent-emoji-flat--white-question-mark.png'
-// @ts-expect-error
-import WATER from './assets/services/ion--water.png'
+import KNOWLEDGE from './assets/services/fluent-emoji-flat--white-question-mark.png'
 // @ts-expect-error
 import FOOD from './assets/services/fluent--food-toast-16-filled.png'
+// @ts-expect-error
+import WATER from './assets/services/ion--water.png'
 // @ts-expect-error
 import CMC from './assets/sponsors/cmc.jpg'
 // @ts-expect-error
@@ -49,14 +51,19 @@ export const serv = {
   title: 'مزايا',
   arr: [
     {
+      img: CERTIFICATE,
+      title: 'شهادات حضور',
+      desc: 'تقديم شهادات حضور لكل المحاضرات'
+    },
+    {
+      img: KNOWLEDGE,
+      title: 'علوم جديدة',
+      desc: 'استكشاف مواضيع جديدة ومجالات مختلفة'
+    },
+    {
       img: PEOPLE,
       title: 'شبكة علاقات',
       desc: 'فرصة للتعرف على الطلاب والمحاضرين والمنظمين'
-    },
-    {
-      img: QUESTION,
-      title: 'معارف جديدة',
-      desc: 'استكشاف مواضيع جديدة ومجالات مختلفة'
     },
     {
       img: WATER,
