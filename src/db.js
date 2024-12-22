@@ -157,9 +157,10 @@ export const spon = {
 
 export const contact = {
   title: 'تواصل معنا',
-  desc: 'لا تتردد في التواصل معنا إذا كان لديك أي استفسار أو تحتاج إلى مساعدة',
-  whatsapp: 'https://wa.me/+966536700116',
-  telegram: 'https://t.me/assayyaad'
+  desc: 'لا تتردد في التواصل معنا للإستفسار أو طلب المساعدة',
+  signal: 'https://signal.me/#eu/QNEPMAlsSmvNO6X70PUeVZRUcJxxwNvOkGVDWTClhB71yjK4QFpIuZduHuHaTbTP',
+  telegram: 'https://t.me/assayyaad',
+  whatsapp: 'https://wa.me/+966536700116'
 }
 
 export const footer = {
