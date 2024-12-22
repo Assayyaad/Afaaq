@@ -2,7 +2,7 @@ export const qrConfig = { width: 140, margin: 1 }
 
 /**
  * @param {string} id
- * @returns {{count: string, type: string, num: string, lec?: string, aud?: boolean}}
+ * @returns {Something}
  */
 export function parseId(id) {
   if (id.includes('aud')) {
@@ -51,3 +51,12 @@ export async function copyToClipboard(text) {
   }
   return true
 }
+
+/**
+ * @typedef {Object} Something
+ * @property {string} count
+ * @property {string} type
+ * @property {string} num
+ * @property {string} [lec]
+ * @property {boolean} [aud]
+ */

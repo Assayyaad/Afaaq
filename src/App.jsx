@@ -8,8 +8,8 @@ import Footer from './components/Footer.jsx'
 import Table from './components/Table.jsx'
 import Hero from './components/Hero.jsx'
 import Nav from './components/Nav.jsx'
-import 'aos/dist/aos.css'
 import { main } from './db.js'
+import 'aos/dist/aos.css'
 
 export default function App() {
   useEffect(() => {

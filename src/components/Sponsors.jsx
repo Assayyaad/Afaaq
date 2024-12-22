@@ -12,14 +12,8 @@ export default function Sponsors() {
         </header>
         <ul className="cards-wrapper flex flex-col md:flex-row items-center gap-4 justify-center  py-4">
           {spon.arr.map((item, i) => (
-            <li className="w-fit overflow-hidden py-2" data-aos="zoom-in" data-aos-delay="300">
-              <a
-                className="duration-300  hover:rotate-6"
-                href={item.url}
-                key={i}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+            <li key={i} className="w-fit overflow-hidden py-2" data-aos="zoom-in" data-aos-delay="300">
+              <a className="duration-300  hover:rotate-6" href={item.url} target="_blank" rel="noopener noreferrer">
                 <img
                   key={i}
                   src={item.img}
