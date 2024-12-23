@@ -80,10 +80,10 @@ web_modules/
 
 # ملفات متغيرات البيئة dotenv
 .env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+.env*
+.flaskenv*
+!.env.project
+!.env.vault
 
 # ذاكرة التخزين المؤقت لـ parcel-bundler (https://parceljs.org/)
 .cache
