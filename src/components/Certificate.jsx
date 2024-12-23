@@ -1,10 +1,11 @@
+/** @import { CertImage } from '../db.js' */
 import React, { useState, useEffect, useRef } from 'react'
 import { FaCopy } from 'react-icons/fa'
 import QRCode from 'qrcode'
 import { qrConfig, idToPos, parseId, copyToClipboard } from '../util.js'
 
 /**
- * @param {{ id: string, images:[] }} props
+ * @param {{ id: string, images: CertImage }} props
  */
 export default function Certificate({ id, images }) {
   /** @type {[string | undefined, React.Dispatch<React.SetStateAction<string>>]} */ // @ts-expect-error
@@ -17,11 +18,8 @@ export default function Certificate({ id, images }) {
   useEffect(() => {
     if (id) {
       const { count, type, num, lec, aud } = parseId(id)
-      const path = `/public/certs/${count}/${type}/${aud ? lec + '/' : ''}${num}.png`
-
-      if (images[path]) {
-        images[path]().then((module) => setImgSrc(module.default))
-      }
+      const path = `${count}/${type}/${aud ? lec + '/' : ''}${num}.png`
+      if (images[path]) setImgSrc(images[path])
     }
   }, [id, images])
 

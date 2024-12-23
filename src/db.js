@@ -189,3 +189,5 @@ export const footer = {
 }
 
 export default { main, nav, desc, register, countDown, serv, table, spon, contact, footer }
+
+/** @typedef {{[fileName: string]: string}} CertImage */

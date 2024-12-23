@@ -1,8 +1,9 @@
+/** @import { CertImage } from '../db.js' */
 import React, { useState } from 'react'
 import Certificates from './Certificates.jsx'
 
 /**
- * @param {{ images:[] }} props
+ * @param {{ images: CertImage }} props
  */
 export default function Search({ images }) {
   /** @type {[string, React.Dispatch<React.SetStateAction<string>>]} */

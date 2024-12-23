@@ -1,3 +1,4 @@
+/** @import { CertImage } from '../db.js' */
 import React, { useState, useEffect, useRef } from 'react'
 import { FaCopy } from 'react-icons/fa'
 import QRCode from 'qrcode'
@@ -5,7 +6,7 @@ import JSZip from 'jszip'
 import { copyToClipboard, parseId, qrConfig, idToPos } from '../util.js'
 
 /**
- * @param {{ id: string, images:[] }} props
+ * @param {{ id: string, images: CertImage }} props
  */
 export default function Certificates({ id, images }) {
   /** @type {[string[], React.Dispatch<React.SetStateAction<string[]>>]} */ // @ts-expect-error
@@ -16,12 +17,13 @@ export default function Certificates({ id, images }) {
   useEffect(() => {
     if (id) {
       const { count, type, lec, aud } = parseId(id)
-      const folderPath = `/public/certs/${count}/${type}/${aud ? lec : ''}`
+      const folderPath = `${count}/${type}/${aud ? lec : ''}`
 
-      const imagePaths = Object.keys(images).filter((path) => path.startsWith(folderPath))
-      Promise.all(imagePaths.map((path) => images[path]())).then((modules) =>
-        setAllImages(modules.map((module) => module.default))
-      )
+      const filteredImages = Object.keys(images)
+        .filter((path) => path.startsWith(folderPath))
+        .map((path) => images[path])
+
+      setAllImages(filteredImages)
     }
   }, [id, images])
 
