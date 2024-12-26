@@ -6,7 +6,7 @@ export default function Table() {
   return (
     <section className="py-12" id="table">
       <div className="container">
-        <header className="mb-12 flow-content--s" data-aos="zoom-in" data-aos-delay="100">
+        <header className="mb-12 flow-content--s">
           <h2 className="text-4xl font-bold text-center">{table.title}</h2>
         </header>
         <div className="cards-wrapper py-6">
@@ -26,7 +26,7 @@ function TableCard0(item, i) {
 
   return (
     <div key={i} className="">
-      <header className="flow-content--s mb-4" data-aos="zoom-in" data-aos-delay="200">
+      <header className="flow-content--s mb-4">
         <h2 className="font-bold text-2xl">{`${table.start + i} أكتوبر 2024 - ${table.weekDays[i]}`}</h2>
       </header>
       <div className="wrapper grid md:grid-cols-2 gap-4">

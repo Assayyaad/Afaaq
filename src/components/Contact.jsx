@@ -6,12 +6,12 @@ export default function Contact() {
   return (
     <section className="py-12" id="contact">
       <div className="container">
-        <header className="flow-content--m text-center mb-8" data-aos="zoom-in" data-aos-delay="100">
+        <header className="flow-content--m text-center mb-8">
           <h2 className="text-2xl font-bold flex items-center gap-4 justify-center">{contact.title}</h2>
           <p className="text-md">{contact.desc}</p>
         </header>
         <ul className="flex justify-center items-center gap-4 flex-col md:flex-row">
-          <li key="si" data-aos="zoom-in" data-aos-delay="300">
+          <li key="si">
             <a
               href={contact.signal}
               target="_blank"
@@ -21,7 +21,7 @@ export default function Contact() {
               <BsSignal size={120} />
             </a>
           </li>
-          <li key="t" data-aos="zoom-in" data-aos-delay="300">
+          <li key="t">
             <a
               href={contact.telegram}
               target="_blank"
@@ -31,7 +31,7 @@ export default function Contact() {
               <BsTelegram size={120} />
             </a>
           </li>
-          <li key="wa" data-aos="zoom-in" data-aos-delay="500">
+          <li key="wa">
             <a
               href={contact.whatsapp}
               target="_blank"

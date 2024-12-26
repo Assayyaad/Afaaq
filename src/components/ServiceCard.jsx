@@ -6,11 +6,7 @@ import React from 'react'
  */
 export default function ServiceCard({ img, title, desc }) {
   return (
-    <div
-      className="card shadow-md p-6 flow-content--m max-w-[550px] group text-center"
-      data-aos="zoom-in"
-      data-aos-delay="200"
-    >
+    <div className="card shadow-md p-6 flow-content--m max-w-[550px] group text-center">
       <div className="img-wrapper">
         <img src={img} alt={'صورة الميزة'} className="w-[150px] h-[150px] mx-auto" />
       </div>

@@ -5,11 +5,7 @@ import React from 'react'
  */
 export default function TableCard({ order, data }) {
   return (
-    <div
-      className="table-card shadow-md rounded-md p-6 max-w-[560px] flow-content--s relative group"
-      data-aos="zoom-in"
-      data-aos-delay="100"
-    >
+    <div className="table-card shadow-md rounded-md p-6 max-w-[560px] flow-content--s relative group">
       <div className="wrapper flex items-center gap-4">
         <div className="badge flex items-center gap-4 justify-between rounded-md shadow-md bg-black text-white px-4 py-1">
           <span>{data.time || (order === 1 ? '11:30 - 1:00 ظهراً' : '1:30 - 3:00 ظهراً')}</span>

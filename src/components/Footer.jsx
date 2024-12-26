@@ -6,14 +6,10 @@ export default function Footer() {
     <footer className="bg-[#222] text-white py-12">
       <div className="container">
         <div className="container flex md:flex-row flex-col items-center justify-between">
-          <a href="#" className="text-2xl font-bold mb-8 md:mb-0" data-aos="fade-left" data-aos-delay="200">
+          <a href="#" className="text-2xl font-bold mb-8 md:mb-0">
             {main.name}
           </a>
-          <ul
-            className="flex md:flex-row flex-col items-center gap-4 justify-center"
-            data-aos="fade-right"
-            data-aos-delay="400"
-          >
+          <ul className="flex md:flex-row flex-col items-center gap-4 justify-center">
             <li>
               <a href="#" className="duration-300 hover:text-cyan-400">
                 {nav.home}
@@ -41,11 +37,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <ul
-          className="mt-4 flex flex-col items-center md:items-start gap-4 md:gap-2"
-          data-aos="fade-left"
-          data-aos-delay="200"
-        >
+        <ul className="mt-4 flex flex-col items-center md:items-start gap-4 md:gap-2">
           <li className="flex items-center gap-2">
             <span>{footer.organizer.intro}: </span>
             <a

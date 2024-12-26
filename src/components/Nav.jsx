@@ -5,10 +5,9 @@ import { main, nav as dbNav } from '../db.js'
 
 export default function Nav() {
   const [nav, setNav] = useState(false)
-  const isDesktop = window.innerWidth >= 768
 
   return (
-    <nav className="py-12 text-white absolute top-0 left-0 right-0 " data-aos={isDesktop && 'zoom-in'}>
+    <nav className="py-12 text-white absolute top-0 left-0 right-0 ">
       <div className="container flex items-center justify-between" dir="ltr">
         <ul className="md:flex items-start gap-4 f hidden">
           <li>
