@@ -39,7 +39,7 @@ export const register = {
   url: 'https://docs.google.com/forms/d/e/1FAIpQLSfaBlI64Rbq3N6Smbr3CwC0NFUw-9Wr0YwI8Zf-CWWCPas2-w/viewform'
 }
 
-export const countDown = {
+export const counter = {
   title: 'سيبدأ الحدث خلال',
   date: '2024-10-26T19:30:00.000Z',
   over: 'انتهى الحدث',
@@ -188,6 +188,6 @@ export const footer = {
   }
 }
 
-export default { main, nav, desc, register, countDown, serv, table, spon, contact, footer }
+export default { main, nav, desc, register, counter, serv, table, spon, contact, footer }
 
 /** @typedef {{[fileName: string]: string}} CertImage */

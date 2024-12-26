@@ -4,7 +4,7 @@ import { BsSignal, BsTelegram, BsWhatsapp } from 'react-icons/bs'
 
 export default function Contact() {
   return (
-    <section className="py-12" id="contact">
+    <section className="py-6" id="contact">
       <div className="container">
         <header className="flow-content--m text-center mb-8">
           <h2 className="text-2xl font-bold flex items-center gap-4 justify-center">{contact.title}</h2>

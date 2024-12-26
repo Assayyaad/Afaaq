@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import Table from './Table.jsx'
 import Register from './Register.jsx'
-import { countDown } from '../db.js'
+import { counter } from '../db.js'
 
-const targetDate = new Date(countDown.date)
+const targetDate = new Date(counter.date)
 
-export default function CountDown() {
+export default function Counter() {
   /** @type {[DateObj | undefined, React.Dispatch<React.SetStateAction<DateObj | undefined>>]} */ // @ts-expect-error
   const [timeLeft, setTimeLeft] = useState(undefined)
 
@@ -16,22 +17,25 @@ export default function CountDown() {
   }, [targetDate])
 
   return (
-    <section className="py-8">
-      {!timeLeft ? (
-        <div className="animate-bounce flex flex-wrap justify-center items-center">
-          <span className="text-4xl text-red-600 font-bold py-2 block">{countDown.over}</span>
-        </div>
-      ) : (
-        <div className="container flow-content--m">
-          <header>
-            <h2 className="font-bold text-4xl text-center">{countDown.title}</h2>
-          </header>
-          <RemainingTime timeLeft={timeLeft} />
-          <Location />
-          <Register />
-        </div>
-      )}
-    </section>
+    <>
+      <section className="py-8">
+        {!timeLeft ? (
+          <div className="animate-bounce flex flex-wrap justify-center items-center">
+            <span className="text-4xl text-red-600 font-bold py-2 block">{counter.over}</span>
+          </div>
+        ) : (
+          <div className="container flow-content--m">
+            <header>
+              <h2 className="font-bold text-4xl text-center">{counter.title}</h2>
+            </header>
+            <RemainingTime timeLeft={timeLeft} />
+            <Location />
+            <Register />
+          </div>
+        )}
+      </section>
+      {timeLeft && <Table />}
+    </>
   )
 }
 
@@ -62,14 +66,14 @@ function Location({}) {
   return (
     <div className="flex flex-col items-center pb-1 text-center justify-center">
       <a
-        href={countDown.maps}
+        href={counter.maps}
         className="p-4 rounded-lg shadow-md bg-[#fff] hover:bg-[#222] hover:text-white duration-300 text-black"
         target="_blank"
         rel="noreferrer"
       >
         <div className="flex items-center justify-center gap-2">
           <FaExternalLinkAlt />
-          {countDown.location}
+          {counter.location}
         </div>
       </a>
     </div>
